@@ -51,8 +51,30 @@
 |------|------|---------|
 | [coding-agent](https://clawdhub.com/skills/coding-agent) | 编程助手 | `clawdhub install coding-agent` |
 | [oracle](https://clawdhub.com/skills/oracle) | 代码分析 | `clawdhub install oracle` |
+| [skyvern-mcp](https://github.com/Skyvern-AI/skyvern) | AI 浏览器自动化 (MCP) | 见下方配置 |
 | [tmux](https://clawdhub.com/skills/tmux) | 终端管理 | `clawdhub install tmux` |
 | [clawdhub](https://clawdhub.com/skills/clawdhub) | 技能管理 | `clawdhub install clawdhub` |
+
+### skyvern-mcp 配置
+
+AI 驱动的浏览器自动化，支持自然语言控制。YC 背景团队开发，使用 LLM + 计算机视觉代替传统 XPath。
+
+```json
+{
+  "mcpServers": {
+    "skyvern": {
+      "command": "python",
+      "args": ["-m", "skyvern", "run", "mcp"],
+      "env": {
+        "SKYVERN_BASE_URL": "https://api.skyvern.com",
+        "SKYVERN_API_KEY": "your-api-key"
+      }
+    }
+  }
+}
+```
+
+**使用场景:** 自动填表、数据抓取、文件下载、复杂工作流自动化
 
 ---
 
